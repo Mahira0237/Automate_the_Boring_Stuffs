@@ -1,0 +1,66 @@
+1. Why are functions advantageous to have in your programs?
+
+A major purpose of functions is to group code that gets executed multiple times. 
+Without a function defined, We would have to copy and paste the code each time
+
+2. When does the code in a function execute: when the function is defined or when the function is called?
+
+called
+
+3. What statement creates a function?
+
+def 
+
+4. What is the difference between a function and a function call?
+
+In code, a function call is just the function’s name followed by parentheses, 
+possibly with some number of arguments in between the parentheses. When the program execution 
+reaches these calls, it will jump to the top line in the function and begin executing the code there. 
+When it reaches the end of the function, the execution returns to the line that called the function and 
+continues moving through the code as before.
+
+5. How many global scopes are there in a Python program? How many local scopes?
+
+There is only one global scope but there can be more than one local scopes
+
+6. What happens to variables in a local scope when the function call returns?
+
+When the function returns, the local scope is destroyed, 
+and any variables assigned in the function are forgotten.
+
+7. What is a return value? Can a return value be part of an expression?
+
+When an expression is used with a return statement, the return value is 
+what this expression evaluates to. 
+
+A return value can be part of an expression
+
+8. If a function does not have a return statement, what is the return value of a call to that function?
+
+None
+
+9. How can you force a variable in a function to refer to the global variable?
+
+gloal statement
+
+10. What is the data type of None?
+
+NoneType
+
+11. What does the import areallyourpetsnamederic statement do?
+
+It will show an error because there does not exist any module named areallyourpetsnamederi
+
+12. If you had a function named bacon() in a module named spam, how would you call it after 
+importing spam?
+
+spam.bacon()
+
+13. How can you prevent a program from crashing when it gets an error?
+
+Exception Handling using try and except 
+
+14. What goes in the try clause? What goes in the except clause?
+
+The code that could potentially have an error is put in a try clause. 
+The program execution moves to the start of a following except clause if an error happens.

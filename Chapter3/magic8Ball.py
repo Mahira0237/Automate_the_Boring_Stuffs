@@ -25,4 +25,3 @@ def getAnswer(answerNumber):
 # print(fortune)
 
 print(getAnswer(random.randint(1, 9)))
-print('cats', 'dogs', 'mice', sep=',',end='.')
