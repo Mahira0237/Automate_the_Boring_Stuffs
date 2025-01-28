@@ -1,5 +1,5 @@
+import sys
 board={'1h': 'bking', '6c': 'wqueen', '2g': 'bbishop', '5h': 'bqueen', '3e': 'wking'}
-
 def isValidChessBoard(board):
     letters=['a','b','c','d','e','f','g','h']
     BK,WK,B,W,BP,WP=0,0,0,0,0,0
@@ -8,8 +8,7 @@ def isValidChessBoard(board):
     for i in k:
         if (int(i[0])>8) or (i[1] not in letters):
             print('The Chessboard is invalid')
-            break
-        else: continue
+            sys.exit()
     for j in v:
         if j[0]=='b':
             B+=1
