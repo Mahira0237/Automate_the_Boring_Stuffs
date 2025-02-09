@@ -3,13 +3,10 @@
 # Usage: py.exe mcb.pyw save <keyword> - Saves clipboard to keyword.
 #        py.exe mcb.pyw <keyword> - Loads keyword to clipboard.
 #        py.exe mcb.pyw list - Loads all keywords to clipboard.
-TEXT = {'agree': """Yes, I agree. That sounds fine to me.""",
-        'busy': """Sorry, can we do this later this week or next week?""",
-        'upsell': """Would you consider making this a monthly donation?"""}
 import shelve, pyperclip, sys
-
 mcbShelf = shelve.open('I:\\My Drive\\AutomateTheBoringStuffs\\Chapter9\\mcb')
 # Save clipboard content.
+print(sys.argv)
 if len(sys.argv) == 3 and sys.argv[1].lower() == 'save':
     mcbShelf[sys.argv[2]] = pyperclip.paste()
 elif len(sys.argv) == 2:
