@@ -18,15 +18,13 @@ class MyZombie:
         #  'rolls': [('yellow', 'brains'), ('red', 'footsteps'),
         #            ('green', 'shotgun')]}
 
-        #REPLACE THIS ZOMBIE CODE WITH YOUR OWN:
-        brains = 0
+        # REPLACE THIS ZOMBIE CODE WITH YOUR OWN:
+        brains=0
         while diceRollResults is not None:
             brains += diceRollResults['brains']
-            
-            if brains < 2:
+            if brains!=2:
                 diceRollResults = zombiedice.roll() # roll again
-            else:
-                break
+            else: break  
 
 zombies = (
     zombiedice.examples.RandomCoinFlipZombie(name='Random'),
