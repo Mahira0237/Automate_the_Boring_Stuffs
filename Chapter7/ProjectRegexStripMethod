@@ -1,10 +1,7 @@
 import re
-
-regexspace=re.compile(r'\s(.*?)\s+|(.*?)\s+|\s(.*?)')
-string=' hsvcsh nsxjnsj sjnjcs '
-gotSpace=regexspace.search(string)
-if gotSpace is not None:
-    arg=gotSpace.group(0)
-    print(arg.replace(" ",""))
-else: print(string)
-
+string='bobbobbobbobbobjfhcfdbvhf        bvfbvkbdfhvbhdfbv'
+def STRIP(string,rem='\s'):
+    str1=re.sub(f'^({rem})+',"",string)
+    str2=re.sub(f'({rem})+$',"",str1)
+    print(str2)
+STRIP(string,'bob')

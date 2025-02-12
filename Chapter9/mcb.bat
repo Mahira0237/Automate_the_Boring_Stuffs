@@ -1,1 +1,0 @@
-@pyw.exe I:\My Drive\AutomateTheBoringStuffs\Chapter9\mcb.pyw %*
