@@ -1,5 +1,4 @@
-import os,re, shutil
-regex=re.compile(r'text$')
+import os,shutil
 for folderName, subfolders, filenames in os.walk('I:\\My Drive\\AutomateTheBoringStuffs\\Chapter1'):
     print('The current folder is ' + folderName)
 
@@ -9,7 +8,8 @@ for folderName, subfolders, filenames in os.walk('I:\\My Drive\\AutomateTheBorin
     for filename in filenames:
         if filename.endswith('py'):
             print('FILE INSIDE ' + folderName + ': '+ filename)
-            #shutil.move(f'{folderName}{filename}','I:\\My Drive\\AutomateTheBoringStuffs\\Chapter1\\Ch1pyFiles')
+            #print(f'{folderName}\\{filename}')
+            #shutil.copy(f'{folderName}\\{filename}','I:\\My Drive\\AutomateTheBoringStuffs\\Chapter10\\Ch1pyFiles')
         else: continue
 
-    print('')
+    print()
