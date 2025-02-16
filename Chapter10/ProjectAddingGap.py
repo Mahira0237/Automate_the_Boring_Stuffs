@@ -23,19 +23,11 @@ for file in os.listdir('I:\\My Drive\\AutomateTheBoringStuffs\\Chapter10\\Number
         digits.append(int(digit))
         digits.sort()
 
-    for i in range(digits[0],(int(digits[-1])+1)):
-        if i not in digits:
-            print(i)
-            missing=i
-
-            Working = 'I:\\My Drive\\AutomateTheBoringStuffs\\Chapter10\\NumberedTextFiles'
-            prevFilename = f'{Working}\\{before}{zeros}{i+1}.txt'
-            if int(digit) >9:               
-                newFilename = f'{Working}\\{before}{zeros}{0}{i}.txt'
-            else:
-                newFilename = f'{Working}\\{before}{zeros}{i}.txt'
-            print(f'Renaming "{prevFilename}" to "{newFilename}"...')
-            #shutil.move(prevFilename, newFilename)   # uncomment after testing
+        Working = 'I:\\My Drive\\AutomateTheBoringStuffs\\Chapter10\\NumberedTextFiles'
+        prevFilename = f'{Working}\\{before}{zeros}{digit}.txt'
+        newFilename = f'{Working}\\{before}{zeros}{0}{digit}.txt'
+        print(f'Renaming "{prevFilename}" to "{newFilename}"...')
+        #shutil.move(prevFilename, newFilename)   # uncomment after testing
 
 
 
