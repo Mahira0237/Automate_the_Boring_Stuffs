@@ -1,0 +1,18 @@
+import random,pyinputplus as pyip,sys
+
+guess = int(input('Guess the coin toss! Enter 1 for heads or 0 for tails:'))
+toss = random.randint(0, 1) # 0 is tails, 1 is heads
+assert guess==0 or guess==1
+if toss == guess:
+    print('You got it!')
+    sys.exit
+else:
+    print('Nope! Guess again!')
+    guess = int(input())
+    assert guess is int
+    if toss == guess:
+        print('You got it!')
+        sys.exit
+    else:
+        print('Nope. You are really bad at this game.')
+        sys.exit
