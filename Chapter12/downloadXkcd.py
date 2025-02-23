@@ -13,7 +13,7 @@ while not url.endswith('#') and i<5:
     res = requests.get(url)
     res.raise_for_status()
 
-    soup = bs4.BeautifulSoup(res.text, 'html.parser')
+    soup = bs4.BeautifulSoup(res.text, 'lxml')
 
     # Find the URL of the comic image.
     comicElem = soup.select('#comic img')

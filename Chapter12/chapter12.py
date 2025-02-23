@@ -39,9 +39,9 @@
 # exampleSoup = bs4.BeautifulSoup(exampleFile, 'html.parser')
 # print(type(exampleSoup))
 
-import bs4
-exampleFile = open('example.html')
-exampleSoup = bs4.BeautifulSoup(exampleFile.read(), 'html.parser')
+# import bs4
+# exampleFile = open('example.html')
+# exampleSoup = bs4.BeautifulSoup(exampleFile.read(), 'html.parser')
 # elems = exampleSoup.select('#author')
 # print(type(elems)) # elems is a list of Tag objects.
 # print(len(elems))
@@ -58,11 +58,27 @@ exampleSoup = bs4.BeautifulSoup(exampleFile.read(), 'html.parser')
 # print(str(pElems[2]))
 # print(pElems[2].getText())
 
-import bs4
-soup = bs4.BeautifulSoup(open('example.html'), 'html.parser')
-spanElem = soup.select('span')[0]
-print(str(spanElem))
-print(spanElem.get('id'))
-print(spanElem.get('some_nonexistent_addr') == None)
-print(spanElem.attrs)
+# import bs4
+# soup = bs4.BeautifulSoup(open('example.html'), 'html.parser')
+# spanElem = soup.select('span')[0]
+# print(str(spanElem))
+# print(spanElem.get('id'))
+# print(spanElem.get('some_nonexistent_addr') == None)
+# print(spanElem.attrs)
+
+# from selenium import webdriver
+# browser = webdriver.Chrome()
+# print(type(browser))
+# browser.get('https://inventwithpython.com')
+
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys 
+from selenium.webdriver.common.by import By
+browser = webdriver.Chrome()
+browser.get('https://inventwithpython.com')
+try:
+    elem = browser.find_element(By.CLASS_NAME,'cover-thumb')
+    print('Found <%s> element with that class name!' % (elem.tag_name))
+except:
+    print('Was not able to find an element with that name.')
 
