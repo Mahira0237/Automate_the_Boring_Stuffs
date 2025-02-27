@@ -75,10 +75,38 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys 
 from selenium.webdriver.common.by import By
 browser = webdriver.Chrome()
-browser.get('https://inventwithpython.com')
-try:
-    elem = browser.find_element(By.CLASS_NAME,'cover-thumb')
-    print('Found <%s> element with that class name!' % (elem.tag_name))
-except:
-    print('Was not able to find an element with that name.')
+# browser.get('https://inventwithpython.com')
+# try:
+#     elem = browser.find_element(By.CLASS_NAME,'cover-thumb')
+#     print('Found <%s> element with that class name!' % (elem.tag_name))
+# except:
+#     print('Was not able to find an element with that name.')
 
+# browser.get('https://inventwithpython.com')
+# linkElem = browser.find_element(By .LINK_TEXT, 'Read Online for Free')
+# print(linkElem)
+# linkElem.click()
+
+# browser.get('https://login.metafilter.com')
+# userElem = browser.find_element(By .ID, 'user_name')
+# userElem.send_keys('your_real_username_here')
+# passwordElem = browser.find_element(By .ID,'user_pass')
+# passwordElem.send_keys('your_real_password_here')
+# passwordElem.submit()
+
+# browser.get('https://nostarch.com')
+# htmlElem = browser.find_element(By .TAG_NAME, 'html')
+# htmlElem.send_keys(Keys.END)     # scrolls to bottom
+# htmlElem.send_keys(Keys.HOME)    # scrolls to top
+
+# import bs4
+# exampleFile = open('chapter12.html')
+# spam = bs4.BeautifulSoup(exampleFile, 'html.parser')
+# print(spam.text.strip())
+
+import bs4
+Link = open('example.html')
+parsedLink = bs4.BeautifulSoup(Link, 'html.parser')
+Elem = parsedLink.find('a')
+linkElem = Elem.attrs
+print(linkElem)

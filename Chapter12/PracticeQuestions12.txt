@@ -1,0 +1,75 @@
+1. Briefly describe the differences between the webbrowser, requests, bs4, and selenium modules.
+webbrowser Comes with Python and opens a browser to a specific page.
+requests Downloads files and web pages from the internet.
+bs4 Parses HTML, the format that web pages are written in.
+selenium Launches and controls a web browser. The selenium module is able to fill in forms and simulate mouse clicks in this browser.
+
+2. What type of object is returned by requests.get()? How can you access the downloaded content as a string value?
+requests.get() returns a Response object, which contains the response that the web server gave for your request. 
+res = requests.get('url link')
+Print(res.text[])
+
+3. What requests method checks that the download worked?
+res = requests.get('url link')
+res.status_code == requests.codes.ok
+
+4. How can you get the HTTP status code of a requests response?
+ raise_for_status()
+
+5. How do you save a requests response to a file?
+import requests
+response = requests.get('https://www.example.com')
+with open('response.txt', 'w') as f:
+    f.write(response.content)
+
+6. What is the keyboard shortcut for opening a browser’s developer tools?
+F12
+
+7. How can you view (in the developer tools) the HTML of a specific element on a web page?
+right-click on the specific element and click Inspect Element
+
+8. What is the CSS selector string that would find the element with an id attribute of main?
+pageContent.select('#id')
+
+9. What is the CSS selector string that would find the elements with a CSS class of highlight?
+pageContent.select('.highlight')
+
+10. What is the CSS selector string that would find all the <div> elements inside another <div> element?
+pageContent.select('div > div')
+
+11. What is the CSS selector string that would find the <button> element with a value attribute set to favorite?
+pageContent.select('button[value="favourite"]')
+
+12. Say you have a Beautiful Soup Tag object stored in the variable spam for the element <div>Hello, world!</div>. 
+How could you get a string 'Hello, world!' from the Tag object?
+print(spam.text.strip())
+
+13. How would you store all the attributes of a Beautiful Soup Tag object in a variable named linkElem?
+import bs4
+Link = open('example.html')
+parsedLink = bs4.BeautifulSoup(Link, 'html.parser')
+Elem = parsedLink.find('a')
+linkElem = Elem.attrs
+print(linkElem)
+
+14. Running import selenium doesn’t work. How do you properly import the selenium module?
+from selenium import webdriver
+
+15. What’s the difference between the find_element_* and find_elements_* methods?
+The find_element_* methods return a single WebElement object, representing the first element on the page that matches your query. 
+The find_elements_* methods return a list of WebElement_* objects for every matching element on the page.
+
+16. What methods do Selenium’s WebElement objects have for simulating mouse clicks and keyboard keys?
+WebElement objects returned from the find_element_* and find_elements_* methods have a click() method that simulates a mouse click on that element. 
+The selenium module has a module for keyboard keys that are impossible to type into a string value, which function much like 
+escape characters. These values are stored in attributes in the selenium.webdriver.common.keys module. Since that is such a long module 
+name, it’s much easier to run from selenium.webdriver.common.keys import Keys at the top of your program; if you do, then you can simply 
+write Keys anywhere you’d normally have to write selenium.webdriver.common.keys.
+
+17. You could call send_keys(Keys.ENTER) on the Submit button’s WebElement object, but what is an easier way to submit a form with selenium?
+form.submit
+
+18. How can you simulate clicking a browser’s Forward, Back, and Refresh buttons with selenium?
+browser.back() Clicks the Back button.
+browser.forward() Clicks the Forward button.
+browser.refresh() Clicks the Refresh/Reload button.
