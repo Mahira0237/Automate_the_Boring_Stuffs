@@ -1,5 +1,4 @@
 # import openpyxl
-# import numpy as np
 # wb = openpyxl.load_workbook('example.xlsx')
 # print(type(wb))
 
