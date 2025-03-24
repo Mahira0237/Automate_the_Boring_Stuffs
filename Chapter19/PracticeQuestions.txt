@@ -1,0 +1,30 @@
+1. What is an RGBA value?
+An RGBA value is a group of numbers that specify the amount of red, green, blue, and alpha (or transparency) in a color. 
+
+2. How can you get the RGBA value of 'CornflowerBlue' from the Pillow module?
+ImageColor.getcolor('CornflowerBlue', 'RGBA')
+
+3. What is a box tuple?
+Box tuple takes four integer coordinates that represent a rectangular region in an image
+
+4. What function returns an Image object for, say, an image file named zophie.png?
+catIm = Image.open('zophie.png')
+
+5. How can you find out the width and height of an Image object’s image?
+image.size
+
+6. What method would you call to get Image object for a 100×100 image, excluding the lower-left quarter of it?
+from PIL import Image
+Im = Image.open('Image.png')
+width,height=Im.size
+croppedIm = Im.crop((width-100, 0, width, 100))
+croppedIm.save('cropped2.png')
+
+7. After making changes to an Image object, how could you save it as an image file?
+image.save('filename)
+
+8. What module contains Pillow’s shape-drawing code?
+Pillow’s ImageDraw module
+
+9. Image objects do not have drawing methods. What kind of object does? How do you get this kind of object?
+ImageDraw.Draw(image)
